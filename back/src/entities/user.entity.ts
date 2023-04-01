@@ -10,7 +10,7 @@ import {
 } from "typeorm";
 import { hashSync } from "bcryptjs";
 import { Exclude } from "class-transformer";
-import { Contacts } from "./contact.entity";
+import { Contact } from "./contact.entity";
 
 @Entity("users")
 export class User {
@@ -48,8 +48,8 @@ export class User {
     this.password = hashSync(this.password, 10);
   }
 
- @OneToMany(()=> Contacts, (contacts)=> contacts.user)
- contacts:Contacts[];
+ @OneToMany(()=> Contact, (contacts)=> contacts.user)
+ contacts:Contact[];
 }
 
 
