@@ -15,17 +15,17 @@ import {
   userUpdateRequestSchema,
 } from "../schemas/users/users.schemas";
 
-const UserRouter = Router();
+const userRouter = Router();
 
-UserRouter.post(
+userRouter.post(
   "",
   validatedBodyMiddleware(userRequestSchema),
   createUserController
 );
 
-UserRouter.get("", authTokenMiddleware,getAllUsersController);
+userRouter.get("", authTokenMiddleware,getAllUsersController);
 
-UserRouter.get(
+userRouter.get(
   "/:id",
   authTokenMiddleware,
   userExistsMiddlewere,
@@ -33,7 +33,7 @@ UserRouter.get(
   getUserByIdController
 );
 
-UserRouter.patch(
+userRouter.patch(
   "/:id",
   authTokenMiddleware,
   userExistsMiddlewere,
@@ -42,7 +42,7 @@ UserRouter.patch(
   updateUserController
 );
 
-UserRouter.delete(
+userRouter.delete(
   "/:id",
   authTokenMiddleware,
   userExistsMiddlewere,
@@ -50,4 +50,4 @@ UserRouter.delete(
   deleteUserController
 );
 
-export default UserRouter
+export default userRouter
