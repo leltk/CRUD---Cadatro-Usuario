@@ -14,7 +14,6 @@ const sessionService = async ({
 }: ISessionRequest): Promise<ISessionResponse> => {
   
   const user = await usersRepository.findOneBy({ email: email });
-  console.log(user);
 
   if (!user) {
     throw new AppError("Email or password invalid");
