@@ -1,8 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
+import { usersRepository } from "../utils/repositories.ultil";
+import { IDataUserResponse } from "../interfaces/users.interfaces";
+import { User } from "../entities/user.entity";
 
-export const authTokenMiddleware = (
+
+export const authTokenMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -24,12 +28,12 @@ export const authTokenMiddleware = (
           message: error.message,
         });
       }
-
-      req.user = {
-        id: decoded.sub as string,
-      };
-
-      return next();
+     
+      req.id = decoded.sub as string;
+      
     }
   );
+  const user = await usersRepository.findOneBy({id: req.id})
+  req.user = user
+  return next();
 };
