@@ -3,12 +3,12 @@ import validatedBodyMiddleware from "../middlewares/validatedData.middleware";
 import { sessionController } from "../controllers/session/session.controllers";
 import { sessionSchema } from "../schemas/session/session.schemas";
 
-const SessionRouter = Router();
+const sessionRouter = Router();
 
-SessionRouter.post(
+sessionRouter.post(
   "",
   validatedBodyMiddleware(sessionSchema),
   sessionController
 );
 
-export default SessionRouter;
+export default sessionRouter;

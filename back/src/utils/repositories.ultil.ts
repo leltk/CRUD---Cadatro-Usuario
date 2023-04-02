@@ -4,5 +4,5 @@ import { User } from "../entities/user.entity";
 const usersRepository = AppDataSource.getRepository(User);
 
 export {
-  usersRepository,
+  usersRepository
 };

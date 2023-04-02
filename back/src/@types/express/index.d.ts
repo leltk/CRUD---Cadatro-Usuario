@@ -8,6 +8,7 @@ declare global {
       user: User;
       id: string;
       contact: Contact;
+
     }
   }
 }
