@@ -18,8 +18,9 @@ Visão geral do projeto, um pouco das tecnologias usadas.
 
 ###  Clone o projeto em sua máquina e instale as depêndencias da aplicação
 
+no terminal deve chegar a pasta back do projeto
+cd back
 Execute o comando em seu terminal:
-
 yarn
 
 ### Crie e preencha o arquivo .env
@@ -37,3 +38,17 @@ yarn typeorm migration:run -d src/data-source.ts
 Execute o comando em seu terminal:
 
 yarn dev
+
+
+##  Rodando o frontend
+
+
+Deve primeiro rodar o backend
+depois acessar no terminal a pasta contacts
+com cd front depois contacts
+Execute o comando em seu terminal:
+
+yarn
+
+yarn dev 
+
