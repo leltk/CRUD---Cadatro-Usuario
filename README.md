@@ -52,3 +52,22 @@ yarn
 
 yarn dev 
 
+
+##Usuarios
+Usuarios devem ter os campos
+{
+	"name": string
+	"image": string
+	"phone": string
+ 	"email": string
+	"password": string
+	"age": number
+}
+todos obrigatorios, telefone deve conter 9 digitos
+
+##Contatos
+todos campos do contato são obrigatorios e eles são :
+"name": string
+"email": string
+"phone": string
+
